@@ -1,7 +1,7 @@
 # Idle inhibition service
 
 This is a simple and straightforward idle inhibition control service based on
-`system-inhibit` and ALSA.
+`systemd-inhibit` and ALSA.
 
 The service enables idle inhibition if sound is played, and disables it if
 sound isn't played.
