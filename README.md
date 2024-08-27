@@ -11,7 +11,7 @@ The service may be useful for homemade desktop environments based on `i3wm`,
 
 ## Installation & deinstallation
 
-To install use `make install` and `make remove` to deinstall.
+Use `make install` to install and `make remove` to deinstall.
 
 ## Documentation & links
 
