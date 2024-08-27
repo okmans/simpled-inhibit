@@ -1,7 +1,9 @@
-RM_SUF := -
 SYSTEMCTL_CMD := systemctl --user --now
+SYSTEMCTL_RELOAD := sudo systemctl daemon-reload
 SERVICE := idle-inhibitor.service
+
 DST := /usr/bin/idle-inhibitor.sh /usr/lib/systemd/user/$(SERVICE)
+RM_SUF := -
 RM_DST := $(addsuffix $(RM_SUF),$(DST))
 
 .PHONY: install remove
@@ -12,7 +14,7 @@ $(DST):
 	sudo cp $(@:$(@D)/%=%) $(@)
 
 enable_service:
-	sudo systemctl daemon-reload
+	$(SYSTEMCTL_RELOAD)
 	$(SYSTEMCTL_CMD) enable $(SERVICE)
 
 $(RM_DST):
@@ -20,4 +22,4 @@ $(RM_DST):
 
 disable_service:
 	$(SYSTEMCTL_CMD) disable $(SERVICE)
-	sudo systemctl daemon-reload
+	$(SYSTEMCTL_RELOAD)
