@@ -1,6 +1,8 @@
 [Unit]
 Description=Toggle idle inhibition depending on whether the audio is playing or not
 Documentation=man:systemd-inhibit(1)
+PartOf=graphical-session.target
+After=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/idle-inhibitor.sh
