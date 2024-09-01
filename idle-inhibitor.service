@@ -1,3 +1,6 @@
+# You should modify this unit to make it part of your idle manager, e.g.
+# swayidle. This ensures that the service will work properly.
+
 [Unit]
 Description=Toggle idle inhibition depending on whether the audio is playing or not
 Documentation=man:systemd-inhibit(1)
